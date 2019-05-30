@@ -1,4 +1,4 @@
-module github.com/rumyantseva/tenerife
+module github.com/tenntenn/tenerife
 
 go 1.12
 
