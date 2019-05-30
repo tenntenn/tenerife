@@ -11,8 +11,8 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/sirupsen/logrus"
 
-	"github.com/rumyantseva/tenerife/internal/application"
-	"github.com/rumyantseva/tenerife/internal/diagnostics"
+	"github.com/tenntenn/tenerife/internal/application"
+	"github.com/tenntenn/tenerife/internal/diagnostics"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	logger.Infof(
 		"Starting the application: v.%s, commit:%s, buildTime:%s",
 		diagnostics.Version, diagnostics.Commit, diagnostics.BuildTime,
-		)
+	)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -41,7 +41,7 @@ func main() {
 	shutdown := make(chan error, 1)
 
 	server := http.Server{
-		Addr: net.JoinHostPort("", port),
+		Addr:    net.JoinHostPort("", port),
 		Handler: r,
 	}
 
